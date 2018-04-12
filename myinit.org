@@ -161,6 +161,8 @@ See https://github.com/abo-abo/avy for more info
 
   One can switch between projects using C-c p and when in a project,
   load another file using C-c f.
+
+  [[https://github.com/ggreer/the_silver_searcher#installation][ag]] is needed for C-c p s s
   #+BEGIN_SRC emacs-lisp
     ;; projectile
     (use-package projectile
