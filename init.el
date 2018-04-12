@@ -64,6 +64,7 @@
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(magit-diff-use-overlays nil)
+ '(magit-log-arguments (quote ("--graph" "--decorate" "-n256")))
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
@@ -76,7 +77,7 @@
  '(org-startup-indented t)
  '(package-selected-packages
    (quote
-    (hydra git-timemachine git-gutter magit wgrep dired+ markdown-mode noflet org-ac iedit expand-region hungry-delete beacon better-shell ob-fsharp elisp-slime-nav ac-slime htmlize ox-reveal zenburn-theme which-key use-package try solarized-theme slime py-autopep8 org-bullets material-theme fsm fsharp-mode exec-path-from-shell elpy ein counsel color-theme-sanityinc-tomorrow better-defaults ace-window)))
+    (dumb-jump counsel-projectile projectile hydra git-timemachine git-gutter magit wgrep dired+ markdown-mode noflet org-ac iedit expand-region hungry-delete beacon better-shell ob-fsharp elisp-slime-nav ac-slime htmlize ox-reveal zenburn-theme which-key use-package try solarized-theme slime py-autopep8 org-bullets material-theme fsm fsharp-mode exec-path-from-shell elpy ein counsel color-theme-sanityinc-tomorrow better-defaults ace-window)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
