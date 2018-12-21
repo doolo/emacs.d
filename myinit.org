@@ -689,6 +689,10 @@ M-x find-name-dired
     (setq py-python-command "python3")
     (setq python-shell-interpreter "python3")
 
+    ;;For jedi to work, you'll need to install the jedi server which is done in emacs by running M-x jedi:install-server. For that to work, though, you'll need to have Python Virtualenv istalled. I did that with:
+    ;; install epc and virtualenv:
+    ;; sudo pip install epc virtualenv
+
     (use-package jedi
       :ensure t
       :init
@@ -773,6 +777,7 @@ M-x find-name-dired
     (bind-key "C-x g" 'magit-status)
     ))
 
+  ;; Disable git-gutter for now since the moving window bug
     (use-package git-gutter
     :ensure t
     :init
