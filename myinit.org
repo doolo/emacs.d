@@ -313,6 +313,9 @@ Super useful package to jump to function declaration from where it is called.
 
     (global-set-key (kbd "C-c c") 'org-capture)
 
+    ;; use python3 as code block interpreter
+    (setq orgf-babel-python-command "python3")
+
     (setq org-agenda-files (list "~/orgNotes/orgfiles/gcal.org"
                                  "~/orgNotes/orgfiles/i.org"
                                  "~/orgNotes/orgfiles/schedule.org"))
