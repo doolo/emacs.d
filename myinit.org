@@ -795,3 +795,124 @@ M-x find-name-dired
   (use-package go-mode
     :mode "\\.go\\'")
 #+END_SRC
+* Java
+#+BEGIN_SRC emacs-lisp
+  ;; (use-package eclim
+  ;;   :ensure t
+  ;;   :config
+  ;;   (setq eclimd-autostart t)
+  ;;   (defun my-java-mode-hook ()
+  ;;     (eclim-mode t))
+  ;;   (add-hook 'java-mode-hook 'my-java-mode-hook)
+  ;;   ;; eclipse installation
+  ;;   (custom-set-variables
+  ;;    ;; below is the dir of eclipse
+  ;;   '(eclim-eclipse-dirs '("~/program/java/eclipse/eclipse"))
+  ;;    ;; below is the path of eclim executable
+  ;;   '(eclim-executable "~/.p2/pool/plugins/org.eclim_2.7.2/bin/eclim"))
+
+
+  ;;   ;; Displaying compilation error messages in the echo area
+  ;;   (setq help-at-pt-display-when-idle t)
+  ;;   (setq help-at-pt-timer-delay 0.1)
+  ;;   (help-at-pt-set-timer)
+
+  ;;   ;; auto-complete-mode
+  ;;   ;; regular auto-complete initialization
+  ;;   ;; this should have been configured in autocomplete section
+  ;;   ;; (use-package auto-complete-config
+  ;;   ;;   :ensure t
+  ;;   ;;   :config
+  ;;   ;;   (ac-config-default)
+  ;;   ;;   )
+
+  ;;   ;; add the emacs-eclim source
+  ;;   (use-package ac-emacs-eclim
+  ;;     :ensure t
+  ;;     :config
+  ;;     (ac-emacs-eclim-config)
+  ;;     )
+  ;;   )
+#+END_SRC
+
+#+RESULTS:
+: t
+* Javascript
+#+BEGIN_SRC emacs-lisp
+  (use-package js-mode
+    :mode ("\\.json$" . js-mode)
+    :init
+    (progn
+      (add-hook 'js-mode-hook (lambda () (setq js-indent-level 2)))))
+
+  ;; (use-package js2-mode
+  ;;   :ensure t
+  ;;   :init
+  ;;   (setq js2-strict-missing-semi-warning nil)
+  ;;   (setq js-basic-indent 2)
+  ;;   (setq-default js2-basic-indent 2
+  ;;                 js2-basic-offset 2
+  ;;                 js2-auto-indent-p t
+  ;;                 js2-cleanup-whitespace t
+  ;;                 js2-enter-indents-newline t
+  ;;                 js2-indent-on-enter-key t
+  ;;                 js2-global-externs (list "window" "module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON" "jQuery" "$"))
+
+  ;;   (add-hook 'js2-mode-hook
+  ;;             (lambda ()
+  ;;               (push '("function" . ?) prettify-symbols-alist)))
+  ;;   :mode (("\\.js$" . js2-mode)
+  ;;          ("Jakefile$" . js2-mode))
+  ;; )
+  (use-package js2-mode
+    :mode (("\\.js$" . js2-mode)
+           ("Jakefile$" . js2-mode))
+    :init
+    (setq js2-strict-missing-semi-warning nil)
+    (setq js-basic-indent 2)
+    (setq-default js2-basic-indent 2
+                  js2-basic-offset 2
+                  js2-auto-indent-p t
+                  js2-cleanup-whitespace t
+                  js2-enter-indents-newline t
+                  js2-indent-on-enter-key t
+                  js2-global-externs (list "window" "module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON" "jQuery" "$"))
+
+    :interpreter ("node" . js2-mode)
+    :bind (;;("C-a" . back-to-indentation-or-beginning-of-line)
+           ("C-M-h" . backward-kill-word))
+    :config
+    (progn
+      (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
+      (add-hook 'js2-mode-hook (lambda ()
+  (bind-key "M-j" 'join-line-or-lines-in-region js2-mode-map)))))
+
+#+END_SRC
+
+* Tern
+  The [[http://ternjs.net/doc/manual.html#emacs][Tern]] project is a JavaScript analyzer that can be used to
+  improve the JavaScript integration with editors like Emacs.
+
+  #+BEGIN_SRC emacs-lisp
+  (use-package tern
+     :ensure t
+     :init (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+     :config
+       (use-package company-tern
+          :ensure t
+          :init (add-to-list 'company-backends 'company-tern)))
+  #+END_SRC
+
+  The following additional keys are bound:
+
+  - ~M-.~ :: Jump to the definition of the thing under the cursor.
+  - M-, :: Brings you back to last place you were when you pressed ~M-.~.
+  - ~C-c C-r~ :: Rename the variable under the cursor.
+  - ~C-c C-c~ :: Find the type of the thing under the cursor.
+  - ~C-c C-d~ :: Find docs of the thing under the cursor. Press again to open the associated URL (if any).
+* Edit Server
+#+BEGIN_SRC emacs-lisp
+  (use-package edit-server
+    :ensure t
+    :init (edit-server-start))
+#+END_SRC
