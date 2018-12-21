@@ -15,6 +15,17 @@
   (setq mode-require-final-newline t)                       ; add a newline at the end of the file if there is not one
   (exec-path-from-shell-copy-env "PATH") ; let $PATH variable be read by Emacs, we may also need to install exec-path-from-shell package
 #+END_SRC
+* font size
+#+BEGIN_SRC emacs-lisp
+  (use-package default-text-scale  ; https://github.com/purcell/default-text-scale
+    :ensure t
+    :init
+    (progn  ; progn is used when mutilple lines of code need executing;;
+      (default-text-scale-mode t)  ;; enable mode by default
+      )
+  )
+
+#+END_SRC
 * key bindings
   #+BEGIN_SRC emacs-lisp
     ;; The comment out is used heavily, we do it in a more handy way
