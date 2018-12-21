@@ -39,6 +39,8 @@
  '(custom-safe-themes
    (quote
     ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" default)))
+ '(eclim-eclipse-dirs (quote ("~/program/java/eclipse/eclipse")))
+ '(eclim-executable "~/.p2/pool/plugins/org.eclim_2.7.2/bin/eclim")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
@@ -77,7 +79,7 @@
  '(org-startup-indented t)
  '(package-selected-packages
    (quote
-    (dumb-jump counsel-projectile projectile hydra git-timemachine git-gutter magit wgrep dired+ markdown-mode noflet org-ac iedit expand-region hungry-delete beacon better-shell ob-fsharp elisp-slime-nav ac-slime htmlize ox-reveal zenburn-theme which-key use-package try solarized-theme slime py-autopep8 org-bullets material-theme fsm fsharp-mode exec-path-from-shell elpy ein counsel color-theme-sanityinc-tomorrow better-defaults ace-window)))
+    (default-text-scale wgrep-ag ac-emacs-eclim ac-emacs-eclim-source eclim ag dumb-jump counsel-projectile projectile hydra git-timemachine git-gutter magit wgrep dired+ markdown-mode noflet org-ac iedit expand-region hungry-delete beacon better-shell ob-fsharp elisp-slime-nav ac-slime htmlize ox-reveal zenburn-theme which-key use-package try solarized-theme slime py-autopep8 org-bullets material-theme fsm fsharp-mode exec-path-from-shell elpy ein counsel color-theme-sanityinc-tomorrow better-defaults ace-window)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
@@ -97,4 +99,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((((class color) (min-colors 89)) (:foreground "#ffffff" :background "#263238"))))
  '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
