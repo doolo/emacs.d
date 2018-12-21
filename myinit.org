@@ -418,7 +418,19 @@ Super useful package to jump to function declaration from where it is called.
       ;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
       )
   #+END_SRC
+* Flyspell
+  May also need a syntax checker, e.g: [[https: // www.pylint.org /  # install][pylint]]
+  #+BEGIN_SRC emacs-lisp
+    (dolist (hook '(text-mode-hook))
+      (add-hook hook (lambda () (flyspell-mode 1))))
 
+    ;; Disable flyspell for log-edit-mode and change-log-mode
+    ;; (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+    ;;      (add-hook hook (lambda () (flyspell-mode -1))))
+
+    ;; spellcheck against comments
+    (flyspell-prog-mode)
+  #+END_SRC
 * Yasnippet
 #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
