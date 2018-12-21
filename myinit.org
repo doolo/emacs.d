@@ -8,7 +8,8 @@
   (setq inhibit-startup-message t)  ; hide the startup screen
   (tool-bar-mode -1)  ; -1 to hide the toolbar to give us more space
   (fset 'yes-or-no-p 'y-or-n-p)  ; type y or n instead of yes or no
-  (global-linum-mode t)  ; enable line numbers globally; (global-flycheck-mode t); ; enable flycheck globally
+  (when (version<= "26.0.50" emacs-version ) (global-display-line-numbers-mode)) ; enable line numbers globally;
+  ;; (global-linum-mode t)
   (add-hook 'before-save-hook 'delete-trailing-whitespace)  ; remove trailing space when saving
   (setq mode-require-final-newline t)                       ; add a newline at the end of the file if there is not one
   (exec-path-from-shell-copy-env "PATH") ; let $PATH variable be read by Emacs, we may also need to install exec-path-from-shell package
